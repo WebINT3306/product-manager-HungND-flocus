@@ -64,12 +64,12 @@
 
       function renderTable() {
         tbody.innerHTML = '';
-        productsList.forEach((product, index) => {
+        productsList.forEach((product) => {
           const tr = document.createElement('tr');
           tr.innerHTML = `
-            <td>${index + 1}</td>
+            <td>${product.id}</td>
             <td>${product.name}</td>
-            <td>${product.category || ''}</td>
+            <td>${product.category}</td>
             <td>${product.price}</td>
             <td>${product.quantity}</td>
           `;
@@ -83,7 +83,7 @@
           const nameA = a.name.toLowerCase();
           const nameB = b.name.toLowerCase();
           if (nameA < nameB) return isAscending ? -1 : 1;
-          else return isAscending ? 1 : -1;
+          if (nameA > nameB) return isAscending ? 1 : -1;
           return 0;
         });
         sortIcon.textContent = isAscending ? '▲' : '▼';
