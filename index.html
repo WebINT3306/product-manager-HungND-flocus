@@ -14,38 +14,29 @@
   <body>
     <div class="container">
       <h1>Quản lý Sản phẩm</h1>
+
       <h2>Thêm sản phẩm mới</h2>
-
       <div id="error-message" class="error-msg"></div>
-
       <div class="form-group">
-        <input type="text" id="input-name" placeholder="Tên sản phẩm">
+        <input type="text" id="input-name" placeholder="Tên sản phẩm ">
         <input type="text" id="input-category" placeholder="Danh mục">
-        <input type="text" id="input-price" placeholder="Đơn giá">
-        <input type="text" id="input-quantity" placeholder="Số lượng">
-        <button id="btn-add">Add</button>
+        <input type="number" id="input-price" placeholder="Đơn giá">
+        <input type="number" id="input-quantity" placeholder="Số lượng">
+        <button id="btn-add">Thêm</button>
       </div>
 
       <h2>Danh sách sản phẩm</h2>
-
-      <table class="product-table">
+      <table id="product-table">
         <thead>
           <tr>
             <th>STT</th>
-            
-            <th class="sortable" id="sort-name"> Tên sản phẩm
-              <span id="sort-icon"></span>
-            </th> 
-
+            <th class="sortable" id="sort-name">Tên sản phẩm <span id="sort-icon"></span></th>
             <th>Danh mục</th>
             <th>Đơn giá</th>
             <th>Số lượng</th>
-
           </tr>
         </thead>
-
         <tbody></tbody>
-
       </table>
     </div>
 
@@ -53,7 +44,7 @@
       let productsList = [];
       let isAscending = true; 
 
-      const tbody = document.querySelector('.product-table tbody')
+      const tbody = document.querySelector('#product-table tbody')
       const btnAdd = document.getElementById('btn-add');
       const sortNameHeader = document.getElementById('sort-name');
       const sortIcon = document.getElementById('sort-icon');
